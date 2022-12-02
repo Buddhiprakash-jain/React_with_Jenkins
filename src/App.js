@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Code change from GitHub new
+          Code changes by Github Webhook Triggers
         </p>
         <a
           className="App-link"
