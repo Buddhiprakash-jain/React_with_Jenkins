@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          By using Pipeline Triggers
+          By using Pipeline Triggers try
         </p>
         <a
           className="App-link"
