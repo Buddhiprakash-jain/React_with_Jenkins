@@ -1,0 +1,33 @@
+pipeline{
+    agent {
+        node{
+            label 'reactnode'
+        }
+    }
+    stages{
+        stage("code"){
+            steps{
+                git 'https://github.com/Buddhiprakash-jain/React_with_Jenkins.git'
+            }
+        }
+        // stage("One time setup"){
+        //     steps{
+        //         sh 'sudo yum install httpd -y'
+        //         sh 'sudo mv DocumentRoot /etc/httpd/conf.d/doc.conf'
+        //         sh 'sudo systemctl start httpd'
+        //         sh 'sudo systemctl enable httpd --now'
+        //     }
+        // }
+        stage("Configure"){
+            steps{
+                sh 'npm install'
+            }
+        }
+        stage("Deploy"){
+            steps{ 
+                sh 'npm run build'
+                sh 'sudo cp -r build/ /var/www/'
+            }
+        }
+    }
+}
